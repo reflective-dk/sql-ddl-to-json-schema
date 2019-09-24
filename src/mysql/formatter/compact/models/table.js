@@ -826,15 +826,6 @@ class Table {
    * @returns {void}
    */
   pushForeignKey(foreignKey) {
-
-    /**
-     * Should not add index or key with same name.
-     * https://github.com/duartealexf/sql-ddl-to-json-schema/issues/15
-     */
-    if (foreignKey.name && this.getIndex(foreignKey.name)) {
-      return;
-    }
-
     /**
      * Validate if referenced table exists.
      *
